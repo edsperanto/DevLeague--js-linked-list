@@ -5,12 +5,18 @@
  */
 function linkedListGenerator(){
 
-  function _getHead() {
+  var ll = null;
 
+  function _getHead() {
+    return ll;
   }
 
   function _getTail() {
-
+    var newLL = ll;
+    while(newLL) {
+      newLL = newLL.next;
+    }
+    return newLL;
   }
 
   function _add(value) {
