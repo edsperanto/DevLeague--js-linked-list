@@ -20,7 +20,10 @@ function linkedListGenerator(){
   }
 
   function _add(value) {
-
+    return {
+      value: value,
+      next: null
+    };
   }
 
   function _remove(number) {
