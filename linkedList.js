@@ -5,33 +5,46 @@
  */
 function linkedListGenerator(){
 
-  var ll = null;
+  var head = null;
 
   function _getHead() {
-    return ll;
+    return head;
   }
 
   function _getTail() {
-    var newLL = ll;
-    while(newLL) {
-      newLL = newLL.next;
+    var curNode = head;
+    while(curNode !== null && curNode.next !== null) {
+      curNode  = curNode.next;
     }
-    return newLL;
+    return curNode;
   }
 
   function _add(value) {
-    return {
+    var tail = _getTail();
+    var newNode = {
       value: value,
       next: null
     };
+    if(tail === null) {
+      head = newNode;
+    }else{
+      tail.next = newNode;
+    }
+    return newNode;
   }
 
   function _remove(number) {
-
   }
 
   function _get(number) {
-
+    var curNode = head;
+    for(var i = 0; i < number; i++) {
+      if(curNode.next === null) {
+        return false;
+      }
+      curNode = curNode.next;
+    }
+    return curNode;
   }
 
   function _insert(value, number) {
@@ -48,3 +61,5 @@ function linkedListGenerator(){
   };
 
 }
+
+var ll = linkedListGenerator();
