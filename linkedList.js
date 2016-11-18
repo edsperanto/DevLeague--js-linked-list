@@ -68,7 +68,7 @@ function linkedListGenerator(){
 
     if(index === 0) { // if insert to beginning
       head = newNode;
-    }else if(curNode === false) { // if location is out of bound
+    }else if(curNode === false || index < 0) { // if location is out of bound
       return false;
     }else{ // if index to insert exists
       prevNode.next = newNode;
