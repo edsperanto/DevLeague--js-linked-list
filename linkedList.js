@@ -34,21 +34,45 @@ function linkedListGenerator(){
   }
 
   function _remove(number) {
+    var prevNode = _get(number-1);
+    var curNode = _get(number);
+    var nextNode = curNode.next;
+
+    if(head === null || curNode === false) { // if linked list is empty, or if node to be removed is null
+      return false;
+    }else if(number === 0) { // if removing first node
+      head = head.next;
+    }else{ // if node to be removed exists
+      prevNode.next = nextNode;
+    }
   }
 
   function _get(number) {
     var curNode = head;
     for(var i = 0; i < number; i++) {
-      if(curNode.next === null) {
+      curNode = curNode.next;
+      if(curNode === null) {
         return false;
       }
-      curNode = curNode.next;
     }
     return curNode;
   }
 
-  function _insert(value, number) {
+  function _insert(value, index) {
+    var prevNode  = _get(index-1);
+    var curNode = _get(index);
+    var newNode = {
+      value: value,
+      next: curNode
+    };
 
+    if(index === 0) {
+      head = newNode;
+    }else if(curNode === false || index < 0) { // if location is out of bound
+      return false;
+    }else{
+      prevNode.next = newNode;
+    }
   }
 
   return {
