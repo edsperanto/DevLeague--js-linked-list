@@ -58,8 +58,21 @@ function linkedListGenerator(){
     }
   }
 
-  function _insert(value, number) {
+  function _insert(value, index) {
+    var prevNode  = _get(index-1);
+    var curNode = _get(index);
+    var newNode = {
+      value: value,
+      next: curNode
+    };
 
+    if(index === 0) {
+      head = newNode;
+    }else if(curNode === false || index < 0) { // if location is out of bound
+      return false;
+    }else{
+      prevNode.next = newNode;
+    }
   }
 
   return {
