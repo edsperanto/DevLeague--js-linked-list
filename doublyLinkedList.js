@@ -5,8 +5,10 @@
  */
 function linkedListGenerator(){
 
-  function _getHead() {
+  var ll = null;
 
+  function _getHead() {
+    return ll;
   }
 
   function _getTail() {
