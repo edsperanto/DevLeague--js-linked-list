@@ -27,7 +27,7 @@ function linkedListGenerator(){
       value: value,
       next: null
     };
-    if(ll === null) {
+    if(curNode === null) {
       ll = newNode;
     }else{
       curNode.next = newNode;
@@ -40,7 +40,14 @@ function linkedListGenerator(){
   }
 
   function _get(number) {
-
+    var curNode = ll;
+    for(var i = 0; i < number; i++) {
+      if(curNode.next === null) {
+        return false;
+      }
+      curNode = curNode.next;
+    }
+    return curNode;
   }
 
   function _insert(value, number) {
