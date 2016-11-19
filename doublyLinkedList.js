@@ -70,7 +70,7 @@ function linkedListGenerator(){
 
     if(number === 0) {
       ll = newNode;
-    }else if(curNode === false || number <0){
+    }else if(curNode === false || number < 0){
       return false;
     }else{
       prevNode.next = newNode;
