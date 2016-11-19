@@ -36,7 +36,17 @@ function linkedListGenerator(){
   }
 
   function _remove(number) {
+    var prevNode = _get(number-1);
+    var curNode = _get(number);
+    var nextNode = curNode.next;
 
+    if(number === 0) {
+      ll = ll.next;
+    }else if(curNode === false){
+      return false;
+    }else{
+      prevNode.next = nextNode;
+    }
   }
 
   function _get(number) {
