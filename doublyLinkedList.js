@@ -13,12 +13,26 @@ function linkedListGenerator(){
 
   function _getTail() {
     var curNode = ll;
-
+    if(curNode !== null) {
+      while(curNode.next !== null) {
+        curNode = curNode.next;
+      }
+    }
     return curNode;
   }
 
   function _add(value) {
-
+    var curNode = _getTail();
+    var newNode = {
+      value: value,
+      next: null
+    };
+    if(ll === null) {
+      ll = newNode;
+    }else{
+      curNode.next = newNode;
+    }
+    return newNode;
   }
 
   function _remove(number) {
