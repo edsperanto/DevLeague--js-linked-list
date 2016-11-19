@@ -12,7 +12,9 @@ function linkedListGenerator(){
   }
 
   function _getTail() {
+    var curNode = ll;
 
+    return curNode;
   }
 
   function _add(value) {
